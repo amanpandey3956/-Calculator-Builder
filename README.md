@@ -29,7 +29,7 @@ Check out the live demo [here](https://calculator-builder-sigma.vercel.app).
 
 If you'd like to fork this repository and customize it, follow these steps:
 
-1. Clone the repository: `git clone git clone git clone https://github.com/amanpandey3956/Calculator-Builder.git`.
+1. Clone the repository: `git clone https://github.com/amanpandey3956/Calculator-Builder.git`.
 
 2. Install the dependencies: `npm install or yarn install`.
 
