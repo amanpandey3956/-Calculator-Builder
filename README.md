@@ -4,26 +4,26 @@ This project is a drag-and-drop calculator builder built using React, Zustand, a
 
 ## 🎯 Features
 
-✅ Drag & Drop Components – Users can add/remove buttons dynamically.
-✅ Predefined Components – Includes number buttons (0-9), operations (+, -, *, /), and a result display.
-✅ Custom Layout – Users can arrange buttons as they like.
-✅ Calculation Logic – The calculator functions correctly based on user input.
-✅ State Management with Zustand – Manages dynamic components efficiently.
-✅ Tailwind CSS Styling – Clean and responsive UI.
+- ✅ Drag & Drop Components – Users can add/remove buttons dynamically.
+- ✅ Predefined Components – Includes number buttons (0-9), operations (+, -, *, /).
+- ✅ Custom Layout – Users can arrange buttons as they like.
+- ✅ Calculation Logic – The calculator functions correctly based on user input.
+- ✅ State Management with Zustand – Manages dynamic components efficiently.
+- ✅ Tailwind CSS Styling – Clean and responsive UI.
 
 Check out the live demo [here](https://calculator-builder-sigma.vercel.app).
 
 ## ✨ Bonus Features
 
-⭐ Dark Mode Toggle
-⭐ Persistence with Local Storage (Saves Calculator Layout)
+- ⭐ Dark Mode Toggle
+- ⭐ Persistence with Local Storage (Saves Calculator Layout)
 
 ## 🛠️ Tech Stack
 
-- React – UI development
-- Zustand – State management
-- Tailwind CSS – Styling
-- @dnd-kit – Drag and drop functionality
+- **React** – UI development
+- **Zustand** – State management
+- **Tailwind CSS** – Styling
+- **@dnd-kit** – Drag and drop functionality
 
 ## ⚙️ Installation
 
