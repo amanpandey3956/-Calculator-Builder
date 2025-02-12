@@ -10,7 +10,7 @@ export const DropZone = () => {
       ref={setNodeRef} 
       className="w-full max-w-md min-h-[250px] rounded-lg shadow-lg bg-gray-100 dark:bg-gray-800 p-4 flex flex-col items-center"
     >
-      <div className="w-full mb-2 p-3 border border-gray-400 bg-white dark:bg-gray-700 rounded text-lg font-mono text-gray-900 dark:text-gray-100 text-right">
+      <div className="w-full text-center mb-2 p-3 border border-gray-400 bg-white dark:bg-gray-700 rounded text-lg font-mono text-gray-900 dark:text-gray-100">
         {expression || "Enter expression"}
       </div>
 
