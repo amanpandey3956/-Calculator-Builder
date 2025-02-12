@@ -7,28 +7,65 @@ interface CalculatorState {
   removeComponent: (id: string) => void;
   calculateResult: () => void;
   clearExpression: () => void;
+  resetLayout: () => void;
 }
 
+// Load initial state from localStorage
+const getInitialState = () => {
+  if (typeof window !== "undefined") {
+    const savedState = localStorage.getItem("calculatorLayout");
+    return savedState ? JSON.parse(savedState) : { components: [], expression: "" };
+  }
+  return { components: [], expression: "" };
+};
+
 export const useCalculatorStore = create<CalculatorState>((set) => ({
-  components: [],
-  expression: "",
+  ...getInitialState(),
+
   addComponent: (component) =>
-    set((state) => ({
-      components: [...state.components, component],
-      expression: state.expression + component.label,
-    })),
+    set((state) => {
+      const updatedComponents = [...state.components, component];
+      const updatedExpression = state.expression + component.label;
+
+      // Save to localStorage
+      localStorage.setItem("calculatorLayout", JSON.stringify({ components: updatedComponents, expression: updatedExpression }));
+
+      return { components: updatedComponents, expression: updatedExpression };
+    }),
+
   removeComponent: (id) =>
-    set((state) => ({
-      components: state.components.filter((c) => c.id !== id),
-      expression: state.expression.replace(id, ""),
-    })),
+    set((state) => {
+      const updatedComponents = state.components.filter((c) => c.id !== id);
+
+      // Save to localStorage
+      localStorage.setItem("calculatorLayout", JSON.stringify({ components: updatedComponents, expression: state.expression }));
+
+      return { components: updatedComponents };
+    }),
+
   calculateResult: () =>
     set((state) => {
       try {
-        return { expression: eval(state.expression).toString() };
+        const result = eval(state.expression).toString();
+
+        // Save result to localStorage
+        localStorage.setItem("calculatorLayout", JSON.stringify({ components: state.components, expression: result }));
+
+        return { expression: result };
       } catch {
         return { expression: "Error" };
       }
     }),
-  clearExpression: () => set(() => ({ expression: "" })),
+
+  clearExpression: () =>
+    set(() => {
+      localStorage.setItem("calculatorLayout", JSON.stringify({ components: [], expression: "" }));
+      return { expression: "" };
+    }),
+
+  resetLayout: () =>
+    set(() => {
+      localStorage.removeItem("calculatorLayout");
+      return { components: [], expression: "" };
+    }),
 }));

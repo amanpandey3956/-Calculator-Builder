@@ -27,7 +27,7 @@ export const DropZone = () => {
       )}
       <div className="mt-4 flex gap-2">
         <button onClick={calculateResult} className="bg-green-500 text-white p-2 rounded shadow hover:bg-green-600 transition">=</button>
-        <button onClick={clearExpression} className="bg-red-500 text-white p-2 rounded shadow hover:bg-red-600 transition">C</button>
+        <button onClick={clearExpression} className="bg-red-500 text-white p-2 rounded shadow hover:bg-red-600 transition">Clear</button>
       </div>
     </div>
   );
