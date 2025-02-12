@@ -8,7 +8,7 @@ export const DraggableButton = ({ id, label }: { id: string; label: string }) =>
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      className="bg-blue-500 text-white p-2 rounded shadow hover:bg-blue-600 transition"
+      className="bg-blue-500 text-white p-2 rounded shadow "
       style={{ transform: transform ? `translate(${transform.x}px, ${transform.y}px)` : undefined }}
     >
       {label}
